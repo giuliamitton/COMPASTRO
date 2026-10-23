@@ -2,24 +2,14 @@ import batman
 import numpy as np
 import matplotlib.pyplot as plt
 
-r_Moon = 1737500
-r_Earth = 6378000
-r_Neptune = 24622000
-r_Jupiter = 71492000
-r_Sun = 695700000
-Au = 149597870700
-
 
 class TransitModel:
     def __init__(self, params_dict):
         self.params = batman.TransitParams()
-        r_star = params_dict.get('r_star', 1) * r_Sun
-        rp_unit = params_dict.get('rp_unit', r_Earth)
-
         self.params.t0 = params_dict.get('t0', 0.0)
         self.params.per = params_dict.get('per')
-        self.params.rp = params_dict.get('rp') * rp_unit / r_star
-        self.params.a = params_dict.get('a') * Au / r_star
+        self.params.rp = params_dict.get('rp')
+        self.params.a = params_dict.get('a')
         self.params.inc = params_dict.get('inc', 90.0)
         self.params.ecc = params_dict.get('ecc', 0.0)
         self.params.w = params_dict.get('w', 90.0)

@@ -1,10 +1,8 @@
 transit:
-  r_star: 0.821
-  rp_unit: r_Jupiter
   t0: 0.0 # time of inferior conjunction
   per: 2.15222144 # orbital period in days
-  rp: 1.079 # planet radius (in units of stellar radii)
-  a: 0.03138 # semi-major axis (in units of stellar radii)
+  rp: 0.1351 # planet radius (in the units of Star's radius)
+  a: 8.22 # semi-major axis (in the units of Star's radius)
   inc: 84.73 # orbital inclination (in degrees)
   ecc: 0.0 # eccentricity
   w: 90.0 # longitude of periastron (in degrees)
