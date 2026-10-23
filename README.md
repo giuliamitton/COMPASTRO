@@ -77,3 +77,10 @@ This project is licensed under the GNU General Public License v3.0.
 ## Author
 
 Tiziano Zingales (tiziano.zingales@unipd.it)
+
+## Updates
+
+in the examples/params.yaml file, the new parameter 'r_star' is added, which is the radius of the hosting star in the units of Sun radius. 
+Also, another new parameter called 'rp_unit' is added, which is the unit that the Planet's radius is describes in. The choices for this parameter are among:
+'r_Moon', 'r_Earth', 'r_Neptune', 'r_Jupiter'.
+If not set, the default choice would be the Earth's radius.
