@@ -1,9 +1,9 @@
 transit:
   t0: 0.0 # time of inferior conjunction
-  per: 2.15222144 # orbital period in days
-  rp: 0.1351 # planet radius (in the units of Star's radius)
-  a: 8.22 # semi-major axis (in the units of Star's radius)
-  inc: 84.73 # orbital inclination (in degrees)
+  per: 2.152175 # orbital period in days
+  rp: 0.12831 # planet radius (in the units of Star's radius)
+  a: 7.81 # semi-major axis (in the units of Star's radius)
+  inc: 84.49 # orbital inclination (in degrees)
   ecc: 0.0 # eccentricity
   w: 90.0 # longitude of periastron (in degrees)
   u: [0.425, 0.179] # limb darkening coefficients [u1, u2]
