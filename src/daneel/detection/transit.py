@@ -27,8 +27,13 @@ class TransitModel:
 
         self.model_half = batman.TransitModel(self.params, self.t)
         self.flux_half = self.model_half.light_curve(self.params)
+        
+        self.params.rp = self.params.rp * 4
+        
+        self.model_double = batman.TransitModel(self.params, self.t)
+        self.flux_double = self.model_double.light_curve(self.params)
 
-        return [self.flux_ref, self.flux_half]
+        return [self.flux_ref, self.flux_half, self.flux_double]
 
     def plot_light_curve(self, output_file='lightcurve.png', show=False):
         self.t_mins = self.t * 24 * 60
@@ -39,6 +44,7 @@ class TransitModel:
         plt.figure(figsize=(7,4))
         plt.plot(self.t_mins, self.flux_ref, 'r', label='Reference Planet')
         plt.plot(self.t_mins, self.flux_half, 'g', label='Half-Radius Planet')
+        plt.plot(self.t_mins, self.flux_double, 'b', label='Double-Radius Planet')
         plt.xlabel('Minutes from mid-transit')
         plt.ylabel('Normalized stellar flux')
         plt.title('WASP-10 b "Brothers" Transit light curves')
