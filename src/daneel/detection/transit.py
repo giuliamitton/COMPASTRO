@@ -33,7 +33,7 @@ class TransitModel:
         plt.plot(self.t_mins, self.flux, 'r')
         plt.xlabel('Minutes from mid-transit')
         plt.ylabel('Normalized stellar flux')
-        plt.title('WASP-2 Ab Transit light curve')
+        plt.title('WASP-10 b Transit light curve')
         plt.grid(alpha=0.3)
         plt.savefig(output_file)
         if show:
