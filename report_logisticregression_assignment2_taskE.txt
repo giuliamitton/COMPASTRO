@@ -1,0 +1,15 @@
+REPORT TASK E - LOGISTIC REGRESSION
+
+1. CONFUSION MATRIX (threshold = 0.498)
+[[70 25]
+[49 45]]
+
+2. PRECISION (Class 1 - Planets)
+Precision = 0.5566 (55,66%)
+
+3. PERFORMANCE COMPARISON WITH RANDOM FOREST
+The results obtained through the Logistic Regression model appear to be particularly weak. This is clearly demonstrated by the ROC curve, which yields an AUC of just 0.530, therefore indicating that the model's predictions are barely better than random guessing and it struggles to properly classify the data.
+This poor performance is further highlighted by the confusion matrix, which shows that the number of False Negatives (49) is higher than that of True Positives (45) accounting for 25.9% of the total predictions. This is in contrast to the Random Forest model, which yielded only 1.1%  compared to only 1.1% False Negatives. 
+Furthermore, the Random Forest model displays an AUC of 0.90 in the ROC curve, suggesting a superior performance. 
+Comparing the Precision-Recall Curve of the two models reveals that the Average Precision (AP) of the Random Forest is 0.8673, whereas the Logistic Regression drops to 0.5566. This significant decrease illustrates the performance worsening as the model structure is simplified. 
+While a simpler, more interpretable model is often preferred over a black box algorithm, in this specific case, the astronomical data (light curves) is far too complex and non-linearly separable to be correctly classified by a linear model such as Logistic Regression.
