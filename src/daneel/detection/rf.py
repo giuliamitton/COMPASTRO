@@ -412,11 +412,11 @@ def plot_lightcurve_sample(idx, X_test_standardized, X_err_test, metadata_test, 
 
 # In[ ]:
 class RandomForest:
-    CSV_PATH = '/Users/Amir/Downloads/tess_data.csv'    # change if needed
     N_BINS = 1000
     USE_SCALER = False                  # Random Forest doesn't need scaling; set True if you want comparability
     SAMPLES_PER_CLASS = 350             # per-class size after augmentation (train split only)
     def __init__(self, params_dict):
+        self.csv_path = params_dict.get('CSV_PATH')
         self.n_estimators = params_dict.get('n_estimators', 500)
         self.max_depth = params_dict.get('max_depth', None)
         self.min_samples_leaf = params_dict.get('min_samples_leaf', 1)
@@ -428,9 +428,8 @@ class RandomForest:
         self.oob_score = params_dict.get('oob_score', True)
 
     def main_function(self):
-        print(self.CSV_PATH)
         X_train, X_test, y_train, y_test, metadata_test, X_test_std_copy, X_err_test, scaler = load_data(
-            csv_path=self.CSV_PATH, n_bins=self.N_BINS, use_scaler=self.USE_SCALER, samples_per_class=self.SAMPLES_PER_CLASS
+            csv_path=self.csv_path, n_bins=self.N_BINS, use_scaler=self.USE_SCALER, samples_per_class=self.SAMPLES_PER_CLASS
         )
         rf = build_random_forest(
             n_estimators=self.n_estimators,

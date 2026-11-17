@@ -9,6 +9,7 @@ transit:
   u: [0.425, 0.179] # limb darkening coefficients [u1, u2]
   limb_dark: "quadratic" # limb darkening model
 randomforest:
+  CSV_PATH: '/Users/Amir/Downloads/tess_data.csv'
   n_estimators: 500
   max_depth: None
   min_samples_leaf: 1
