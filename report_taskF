@@ -1,0 +1,134 @@
+
+1) BASE CONFIGURATION
+[[74 21]
+ [9 85]]
+
+======================================================================
+THRESHOLD OPTIMIZATION & EVALUATION
+======================================================================
+
+Optimal threshold: 0.4363 (default=0.5)
+  At this threshold: TPR=0.9043, FPR=0.2211
+
+Results:
+  AUC-ROC: 0.8981
+  Accuracy (default threshold=0.5): 0.8201 (82.01%)
+  Accuracy (optimal threshold=0.4363): 0.8413 (84.13%)
+
+With optimal threshold:
+              precision    recall  f1-score   support
+
+  Non-Planet     0.8916    0.7789    0.8315        95
+      Planet     0.8019    0.9043    0.8500        94
+
+    accuracy                         0.8413       189
+   macro avg     0.8467    0.8416    0.8407       189
+weighted avg     0.8470    0.8413    0.8407       189
+
+
+Prediction distribution (optimal threshold):
+...
+  Predicted 1: 106
+True distribution:
+  True 0: 95
+  True 1: 94
+
+2) 4 STARTING LEVELS ADDED: One Conv1D layer with 32 inputs, along with a Batch Normalization, a Max Pooling and a Dropout layer.
+[[80 15]
+ [13 81]]
+
+======================================================================
+THRESHOLD OPTIMIZATION & EVALUATION
+======================================================================
+
+Optimal threshold: 0.4987 (default=0.5)
+  At this threshold: TPR=0.8617, FPR=0.1579
+
+Results:
+  AUC-ROC: 0.8642
+  Accuracy (default threshold=0.5): 0.8413 (84.13%)
+  Accuracy (optimal threshold=0.4987): 0.8519 (85.19%)
+
+With optimal threshold:
+              precision    recall  f1-score   support
+
+  Non-Planet     0.8602    0.8421    0.8511        95
+      Planet     0.8438    0.8617    0.8526        94
+
+    accuracy                         0.8519       189
+   macro avg     0.8520    0.8519    0.8518       189
+weighted avg     0.8520    0.8519    0.8518       189
+
+
+Prediction distribution (optimal threshold):
+...
+  Predicted 1: 96
+True distribution:
+  True 0: 95
+  True 1: 94
+
+3) INCREASED EPOCHS (400)
+[[80 15]
+ [13 81]]
+======================================================================
+THRESHOLD OPTIMIZATION & EVALUATION
+======================================================================
+
+Optimal threshold: 0.4650 (default=0.5)
+  At this threshold: TPR=0.8723, FPR=0.1684
+
+Results:
+  AUC-ROC: 0.8936
+  Accuracy (default threshold=0.5): 0.8148 (81.48%)
+  Accuracy (optimal threshold=0.4650): 0.8519 (85.19%)
+
+With optimal threshold:
+              precision    recall  f1-score   support
+
+  Non-Planet     0.8681    0.8316    0.8495        95
+      Planet     0.8367    0.8723    0.8542        94
+
+    accuracy                         0.8519       189
+   macro avg     0.8524    0.8520    0.8518       189
+weighted avg     0.8525    0.8519    0.8518       189
+
+
+Prediction distribution (optimal threshold):
+...
+  Predicted 1: 98
+True distribution:
+  True 0: 95
+  True 1: 94
+  
+4) DOUBLED NEURONS
+[[79 16]
+ [12 82]]
+======================================================================
+THRESHOLD OPTIMIZATION & EVALUATION
+======================================================================
+
+Optimal threshold: 0.4650 (default=0.5)
+  At this threshold: TPR=0.8723, FPR=0.1684
+
+Results:
+  AUC-ROC: 0.8936
+  Accuracy (default threshold=0.5): 0.8148 (81.48%)
+  Accuracy (optimal threshold=0.4650): 0.8519 (85.19%)
+
+With optimal threshold:
+              precision    recall  f1-score   support
+
+  Non-Planet     0.8681    0.8316    0.8495        95
+      Planet     0.8367    0.8723    0.8542        94
+
+    accuracy                         0.8519       189
+   macro avg     0.8524    0.8520    0.8518       189
+weighted avg     0.8525    0.8519    0.8518       189
+
+
+Prediction distribution (optimal threshold):
+...
+  Predicted 1: 98
+True distribution:
+  True 0: 95
+  True 1: 94
