@@ -3,6 +3,7 @@ from datetime import datetime, timezone
 
 from daneel.detection import TransitModel
 from daneel.parameters import Parameters
+from daneel.detection import RandomForest
 
 
 def main():
@@ -21,8 +22,9 @@ def main():
     actions.add_argument("-t", "--transit", action="store_true", help="Plot a transit light curve")
 
     actions.add_argument("-d", "--detect", action="store_true", help="Run exoplanet detection")
+    parser.add_argument("classifier", nargs="?", help="Sub-command or classifier like rf")
     actions.add_argument("-a", "--atmosphere", action="store_true", help="Run atmospheric characterisation")
-    parser.add_argument("-o", "--output", default="lc.png", help="Output image for --transit")
+    parser.add_argument("-o", "--output", default='lc.png', help="Output image for transit")
 
     args = parser.parse_args()
 
@@ -34,8 +36,9 @@ def main():
     if args.transit:
         transit = TransitModel(input_pars['transit'])
         transit.plot_light_curve(args.output)
-    elif args.detect:
-        parser.error("detection is not implemented yet; use --transit")
+    elif args.detect and args.classifier == 'rf':
+        random_forest = RandomForest(input_pars['randomforest'])
+        random_forest.run()
     elif args.atmosphere:
         parser.error("atmospheric characterisation is not implemented yet; use --transit")
 
