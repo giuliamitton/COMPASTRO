@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from daneel.detection import TransitModel
 from daneel.parameters import Parameters
 from daneel.detection import RandomForest
+from daneel.detection import CNN
 
 
 def main():
@@ -39,6 +40,9 @@ def main():
     elif args.detect and args.classifier == 'rf':
         random_forest = RandomForest(input_pars['randomforest'])
         random_forest.run()
+    elif args.detect and args.classifier == 'cnn':
+        cnn = CNN(input_pars['cnn'])
+        cnn.run()
     elif args.atmosphere:
         parser.error("atmospheric characterisation is not implemented yet; use --transit")
 
